@@ -1,0 +1,366 @@
+:root {
+    --primary-color: #4361ee;
+    --primary-dark: #3f37c9;
+    --primary-light: #9c4dff;
+    --dark-color: #1a1a1a;
+    --light-color: #f8f9fa;
+    --gray-color: #6c757d;
+    --danger-color: #e63946;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f8f9fa;
+    color: #2b2d42;
+    min-height: 100vh;
+    font-family: 'Poppins', 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container form login/register */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+    background: none;
+}
+
+.forms-container {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+}
+
+/* Card style untuk form */
+.form-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px -8px rgba(67, 97, 238, 0.18);
+    padding: 40px 32px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 24px auto;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.form-container.hidden {
+    display: none;
+}
+
+/* Judul dan subjudul */
+h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.subtitle {
+    color: #8d99ae;
+    margin-bottom: 24px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Form group dan label */
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #3f37c9;
+    font-size: 0.97rem;
+    font-weight: 500;
+}
+
+/* Input style */
+input {
+    background: #f8fafc;
+    border: 1px solid #e9ecef;
+    color: #2b2d42;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 15px;
+    margin-bottom: 8px;
+    width: 100%;
+    transition: border 0.2s;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.08);
+}
+
+/* Toggle password icon */
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 38px;
+    cursor: pointer;
+    color: var(--gray-color);
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.toggle-password:hover {
+    color: var(--primary-color);
+}
+
+/* Button style */
+.btn {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 0;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    width: 100%;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(67, 97, 238, 0.08);
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    box-shadow: 0 4px 16px rgba(67, 97, 238, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Error message style */
+.error-message {
+    background: #f72585;
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.98rem;
+}
+
+/* Switch form link */
+.switch-form {
+    color: #6c757d;
+    margin-top: 18px;
+    text-align: center;
+}
+
+.switch-form a {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.switch-form a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Options (remember me & forgot password) */
+.options {
+    color: #6c757d;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.forgot-password {
+    color: var(--primary-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: var(--primary-color);
+}
+
+/* Terms checkbox */
+.terms {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--gray-color);
+}
+
+.terms input {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.terms a {
+    color: var(--primary-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.terms a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .form-container {
+        padding: 24px 8px;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    .forms-container {
+        padding: 0;
+    }
+}
+
+/* --- Hapus/hindari penggunaan image-container, overlay, content, dsb pada login/register --- */
+.image-container,
+.overlay,
+.content {
+    display: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.logo-img {
+  max-width: 110px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo-header {
+  margin-bottom: 0px; /* rapat dengan judul */
+}
+
+.logo-img-header {
+  max-width: 56px;   /* Ukuran proporsional, bisa diubah sesuai selera */
+  width: 56px;
+  height: 56px;
+  display: block;
+  margin: 0 auto 8px auto;
+}
+
+.wide-auth {
+    min-width: 100vw;
+    min-height: 100vh;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wide-forms {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    width: 100%;
+    max-width: 900px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.wide-forms .form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .wide-forms {
+        flex-direction: column;
+        gap: 0;
+        max-width: 420px;
+    }
+    .wide-forms .form-container {
+        margin-bottom: 24px;
+    }
+}
+
+/* Tambahan untuk header dengan logo di samping judul */
+.header-with-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.logo-img-header {
+  max-width: 56px;
+  width: 56px;
+  height: 56px;
+  display: block;
+}
+
+.page-title.center-shadow {
+  margin: 0;
+  box-shadow: 0 8px 24px -8px rgba(67, 97, 238, 0.18);
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 32px 18px 32px;
+  position: relative;
+  width: auto;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+@media (max-width: 600px) {
+  .header-with-logo {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .page-title.center-shadow {
+    font-size: 1.1rem;
+    padding: 12px 10px;
+    width: 100%;
+    text-align: center;
+  }
+  .logo-img-header {
+    max-width: 40px;
+    width: 40px;
+    height: 40px;
+  }
+}

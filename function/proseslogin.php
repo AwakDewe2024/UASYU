@@ -15,7 +15,7 @@ if ($username && $password) {
         if (password_verify($password, $user['password'])) {
             $_SESSION['id_pengguna'] = $user['id_pengguna'];
             $_SESSION['username'] = $user['username'];
-            $_SESSION['role'] = $user['role']; // role dari database
+            $_SESSION['role'] = $user2['role']; // role dari database
             header("Location: ../index.php?page=rekam_medis"); // ganti sesuai halaman setelah login
             exit;
         } else {
